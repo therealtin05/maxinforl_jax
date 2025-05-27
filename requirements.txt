@@ -1,0 +1,11 @@
+chex==0.1.86
+jax[cuda12]>=0.4.28
+jaxlib==0.4.28
+jax-cuda12-pjrt==0.4.28
+jax-cuda12-plugin==0.4.28
+jaxopt==0.8.3
+flax==0.8.5
+orbax-checkpoint==0.6.4
+nvidia-cuda-nvcc-cu12==12.8.93
+nvidia-cuda-nvrtc-cu12==12.8.93
+nvidia-cuda-runtime-cu12==12.8.90

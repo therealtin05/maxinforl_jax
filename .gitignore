@@ -1,0 +1,21 @@
+# Ignore all .mp4 files
+*.mp4
+
+# Ignore Jupyter notebook with sensitive WandB key
+maxinforl.ipynb
+
+# Ignore directories with generated or temporary files
+kaggle_results/
+logs/
+
+humanoid-bench/  # Confirm this matches your directory (e.g., humanoid-bench/ if hyphenated)
+maxinforl_jax.egg-info/
+wandb/
+
+# Additional patterns for safety
+*.tfevents.*  # TensorFlow event files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log

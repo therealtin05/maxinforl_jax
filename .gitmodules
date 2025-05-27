@@ -1,0 +1,3 @@
+[submodule "humanoid-bench"]
+	path = humanoid-bench
+	url = https://github.com/carlosferrazza/humanoid-bench.git

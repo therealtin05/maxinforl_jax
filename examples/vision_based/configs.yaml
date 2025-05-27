@@ -1,0 +1,245 @@
+dmc_small:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 2
+    from_pixels: True
+    frame_stack: 3
+    image_size: 84
+    gray_scale: False
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+    n_steps_returns: 3
+  maxinfodrq:
+    hidden_dims: [256, 256]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [256, 256]
+    cnn_features: [32, 32, 32, 32]
+    cnn_strides: [2, 1, 1, 1]
+    cnn_padding: 'VALID'
+    latent_dim: 50
+    obs_dim: 32
+    init_temperature: 1.0
+  drq:
+    hidden_dims: [ 256, 256 ]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 50
+    init_temperature: 1.0
+  drqv2:
+    hidden_dims: [ 256, 256 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.0001
+    critic_lr: 0.0001
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 50
+    init_sig: 1.0
+    final_sig: 0.1
+    steps_to_final_sig: 500_000
+    use_dormant_ratio: false
+  maxinfodrqv2:
+    hidden_dims: [ 256, 256 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.0001
+    critic_lr: 0.0001
+    ens_lr: 0.0001
+    dyn_ent_lr: 0.0001
+    model_hidden_dims: [ 256, 256 ]
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 50
+    obs_dim: 32
+    init_sig: 0.2
+    final_sig: 0.2
+    steps_to_final_sig: 500_000
+    use_dormant_ratio: false
+
+dmc_big:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 2
+    from_pixels: True
+    frame_stack: 3
+    image_size: 84
+    gray_scale: False
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+    n_steps_returns: 3
+  drqv2:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.0001
+    critic_lr: 0.0001
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 100
+    init_sig: 1.0
+    final_sig: 0.1
+    steps_to_final_sig: 2_000_000
+    use_dormant_ratio: true
+  maxinfodrqv2:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.00008
+    critic_lr: 0.00008
+    ens_lr: 0.0001
+    dyn_ent_lr: 0.0001
+    model_hidden_dims: [ 1024, 1024 ]
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 100
+    obs_dim: 32
+    init_sig: 1.0
+    final_sig: 0.1
+    steps_to_final_sig: 2_000_000
+    use_dormant_ratio: true
+
+dmc_big_low_lr:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 2
+    from_pixels: True
+    frame_stack: 3
+    image_size: 84
+    gray_scale: False
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+    n_steps_returns: 3
+  drqv2:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.0001
+    critic_lr: 0.0001
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 100
+    init_sig: 1.0
+    final_sig: 0.1
+    steps_to_final_sig: 2_000_000
+    use_dormant_ratio: true
+  maxinfodrqv2:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.01
+    target_update_period: 1
+    actor_lr: 0.00008
+    critic_lr: 0.00008
+    ens_lr: 0.00008
+    dyn_ent_lr: 0.00008
+    model_hidden_dims: [ 1024, 1024 ]
+    cnn_features: [ 32, 32, 32, 32 ]
+    cnn_strides: [ 2, 1, 1, 1 ]
+    cnn_padding: 'VALID'
+    latent_dim: 100
+    obs_dim: 32
+    init_sig: 1.0
+    final_sig: 0.1
+    steps_to_final_sig: 2_000_000
+    use_dormant_ratio: true
+
+
+cartpole-swingup_sparse:
+  env_class: dmc_small
+  max_steps: 250_000
+  eval_interval: 10_000
+
+reacher-hard:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+acrobot-swingup:
+  env_class: dmc_small
+  max_steps: 750_000
+  eval_interval: 10_000
+
+finger-turn_hard:
+  env_class: dmc_small
+  max_steps: 1_000_000
+  eval_interval: 10_000
+
+quadruped-walk:
+  env_class: dmc_small
+  max_steps: 750_000
+  eval_interval: 10_000
+
+ball-in_cup_catch:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+humanoid-stand:
+  env_class: dmc_big
+  max_steps: 10_000_000
+  eval_interval: 10_000
+
+humanoid-walk:
+  env_class: dmc_big
+  max_steps: 10_000_000
+  eval_interval: 10_000
+
+humanoid-run:
+  env_class: dmc_big
+  max_steps: 10_000_000
+  eval_interval: 10_000
+
+dog-stand:
+  env_class: dmc_big_low_lr
+  max_steps: 7_500_000
+  eval_interval: 10_000
+
+dog-walk:
+  env_class: dmc_big_low_lr
+  max_steps: 7_500_000
+  eval_interval: 10_000
+
+dog-run:
+  env_class: dmc_big_low_lr
+  max_steps: 7_500_000
+  eval_interval: 10_000

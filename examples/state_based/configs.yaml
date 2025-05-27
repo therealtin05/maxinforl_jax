@@ -1,0 +1,277 @@
+dmc_small:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 2
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+  maxinfosac:
+    hidden_dims: [256, 256]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [256, 256]
+  sac:
+    hidden_dims: [256, 256]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+  redq:
+    hidden_dims: [256, 256]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    n: 10
+    m: 2
+    updates_per_step: 20
+  maxinforedq:
+    hidden_dims: [256, 256]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [256, 256]
+    n: 10
+    m: 2
+    updates_per_step: 20
+
+dmc_big:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 2
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+  maxinfosac:
+    hidden_dims: [1024, 1024]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [1024, 1024]
+  sac:
+    hidden_dims: [1024, 1024]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+  redq:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    n: 10
+    m: 2
+    updates_per_step: 20
+  maxinforedq:
+    hidden_dims: [ 1024, 1024 ]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [ 1024, 1024 ]
+    n: 10
+    m: 2
+    updates_per_step: 20
+
+gym:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 1
+  train_kwargs:
+    replay_buffer_size: 1_000_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+  maxinfosac:
+    hidden_dims: [ 256, 256 ]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+    ens_lr: 0.0003
+    dyn_ent_lr: 0.0003
+    model_hidden_dims: [ 256, 256 ]
+  sac:
+    hidden_dims: [ 256, 256 ]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.0003
+    critic_lr: 0.0003
+    temp_lr: 0.0003
+
+humanoid_bench:
+  env_kwargs:
+    action_cost: 0.0
+    action_repeat: 1
+  train_kwargs:
+    replay_buffer_size: 2_500_000
+    training_start: 0
+    log_interval: 1_000
+    eval_episodes: 5
+    batch_size: 256
+    updates_per_step: 1
+  maxinfosac:
+    hidden_dims: [512, 512]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.00005
+    critic_lr: 0.00005
+    temp_lr: 0.00005
+    ens_lr: 0.00005
+    dyn_ent_lr: 0.00005
+    model_hidden_dims: [512, 512]
+  sac:
+    hidden_dims: [512, 512]
+    discount: 0.99
+    tau: 0.005
+    target_update_period: 1
+    target_entropy: NULL
+    backup_entropy: true
+    actor_lr: 0.00005
+    critic_lr: 0.00005
+    temp_lr: 0.00005
+
+cartpole-swingup_sparse:
+  env_class: dmc_small
+  max_steps: 250_000
+  eval_interval: 10_000
+
+reacher-hard:
+  env_class: dmc_small
+  max_steps: 250_000
+  eval_interval: 10_000
+
+finger-spin:
+  env_class: dmc_small
+  max_steps: 250_000
+  eval_interval: 10_000
+
+hopper-hop:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+finger-turn_hard:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+walker-run:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+cheetah-run:
+  env_class: dmc_small
+  max_steps: 500_000
+  eval_interval: 10_000
+
+humanoid-stand:
+  env_class: dmc_big
+  max_steps: 2_500_000
+  eval_interval: 10_000
+
+humanoid-walk:
+  env_class: dmc_big
+  max_steps: 2_500_000
+  eval_interval: 10_000
+
+humanoid-run:
+  env_class: dmc_big
+  max_steps: 2_500_000
+  eval_interval: 10_000
+
+HumanoidRun-v1:
+  env_class: dmc_big
+  max_steps: 2_500_000
+  eval_interval: 10_000
+
+quadruped-run:
+  env_class: dmc_big
+  max_steps: 2_500_000
+  eval_interval: 10_000
+
+MountainCarContinuous-v0:
+  env_class: gym
+  max_steps: 50_000
+  eval_interval: 1_000
+
+humanoid_bench/h1-stand-v0:
+  env_class: humanoid_bench
+  max_steps: 5_000_000
+  eval_interval: 10_000
+
+humanoid_bench/h1-walk-v0:
+  env_class: humanoid_bench
+  max_steps: 5_000_000
+  eval_interval: 10_000
+
+humanoid_bench/h1-run-v0:
+  env_class: humanoid_bench
+  max_steps: 5_000_000
+  eval_interval: 10_000
